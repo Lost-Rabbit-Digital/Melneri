@@ -1,2 +1,2 @@
-# The Avalon Tomes Wiki
-A public wiki for The Avalon Tomes series by Lost Rabbit Digital
+# Melneri Wiki
+A public wiki for the Melneri series by Lost Rabbit Digital
