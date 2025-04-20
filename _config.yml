@@ -1,0 +1,94 @@
+# Site settings
+title: World of Melneri
+description: A comprehensive reference for the world of Melneri
+baseurl: "/melneri-world" # Change this to your repository name
+url: "https://yourusername.github.io" # Change this to your GitHub username
+
+# Build settings
+markdown: kramdown
+remote_theme: just-the-docs/just-the-docs
+
+# Just the Docs settings
+color_scheme: dark # Options: light (default), dark
+search_enabled: true
+heading_anchors: true
+permalink: pretty
+aux_links:
+  "Melneri World on GitHub":
+    - "//github.com/yourusername/melneri-world" # Change to your repository URL
+
+# Back to top link
+back_to_top: true
+back_to_top_text: "Back to top"
+
+# Footer content
+footer_content: "Copyright &copy; 2025 Your Name. All content related to the Melneri world is your own creative property."
+
+# Collections (your world categories)
+collections:
+  atlas:
+    output: true
+    permalink: /:collection/:path/
+  chronicles:
+    output: true
+    permalink: /:collection/:path/
+  cultures:
+    output: true
+    permalink: /:collection/:path/
+  factions:
+    output: true
+    permalink: /:collection/:path/
+  people:
+    output: true
+    permalink: /:collection/:path/
+  bestiary:
+    output: true
+    permalink: /:collection/:path/
+  systems:
+    output: true
+    permalink: /:collection/:path/
+
+# Default layouts
+defaults:
+  - scope:
+      path: ""
+      type: atlas
+    values:
+      layout: default
+      parent: Atlas
+  - scope:
+      path: ""
+      type: chronicles
+    values:
+      layout: default
+      parent: Chronicles
+  - scope:
+      path: ""
+      type: cultures
+    values:
+      layout: default
+      parent: Cultures
+  - scope:
+      path: ""
+      type: factions
+    values:
+      layout: default
+      parent: Factions
+  - scope:
+      path: ""
+      type: people
+    values:
+      layout: default
+      parent: People
+  - scope:
+      path: ""
+      type: bestiary
+    values:
+      layout: default
+      parent: Bestiary
+  - scope:
+      path: ""
+      type: systems
+    values:
+      layout: default
+      parent: Systems
