@@ -4,63 +4,126 @@ layout: default
 
 # World of Melneri
 
+<div class="welcome-note">
 Welcome to the documentation for the Melneri world, a comprehensive reference for all stories set in this universe.
+</div>
 
-<div class="navigation-section">
+<div class="navigation-panel">
   <h2 class="navigation-title">Navigation</h2>
-  <div>
-    <a href="{{ site.baseurl }}/atlas/">Atlas</a> - Geography and locations<br>
-    <a href="{{ site.baseurl }}/chronicles/">Chronicles</a> - History and timeline<br>
-    <a href="{{ site.baseurl }}/cultures/">Cultures</a> - Societies and customs<br>
-    <a href="{{ site.baseurl }}/factions/">Factions</a> - Organizations and groups<br>
-    <a href="{{ site.baseurl }}/people/">People</a> - Notable characters<br>
-    <a href="{{ site.baseurl }}/bestiary/">Bestiary</a> - Creatures and monsters<br>
-    <a href="{{ site.baseurl }}/systems/">Systems</a> - Magic, technology, and natural laws
+  <div class="nav-grid">
+    <div class="nav-item">
+      <div class="nav-icon">🗺️</div>
+      <div class="nav-content">
+        <a href="{{ site.baseurl }}/atlas/" class="nav-link">Atlas</a>
+        <div class="nav-description">Geography and locations</div>
+      </div>
+    </div>
+    <div class="nav-item">
+      <div class="nav-icon">📜</div>
+      <div class="nav-content">
+        <a href="{{ site.baseurl }}/chronicles/" class="nav-link">Chronicles</a>
+        <div class="nav-description">History and timeline</div>
+      </div>
+    </div>
+    <div class="nav-item">
+      <div class="nav-icon">👥</div>
+      <div class="nav-content">
+        <a href="{{ site.baseurl }}/cultures/" class="nav-link">Cultures</a>
+        <div class="nav-description">Societies and customs</div>
+      </div>
+    </div>
+    <div class="nav-item">
+      <div class="nav-icon">⚔️</div>
+      <div class="nav-content">
+        <a href="{{ site.baseurl }}/factions/" class="nav-link">Factions</a>
+        <div class="nav-description">Organizations and groups</div>
+      </div>
+    </div>
+    <div class="nav-item">
+      <div class="nav-icon">👤</div>
+      <div class="nav-content">
+        <a href="{{ site.baseurl }}/people/" class="nav-link">People</a>
+        <div class="nav-description">Notable characters</div>
+      </div>
+    </div>
+    <div class="nav-item">
+      <div class="nav-icon">🐉</div>
+      <div class="nav-content">
+        <a href="{{ site.baseurl }}/bestiary/" class="nav-link">Bestiary</a>
+        <div class="nav-description">Creatures and monsters</div>
+      </div>
+    </div>
+    <div class="nav-item">
+      <div class="nav-icon">✨</div>
+      <div class="nav-content">
+        <a href="{{ site.baseurl }}/systems/" class="nav-link">Systems</a>
+        <div class="nav-description">Magic, technology, and natural laws</div>
+      </div>
+    </div>
   </div>
 </div>
 
-<div id="about-melneri">
-  <h2>About Melneri</h2>
+## About Melneri
 
-  <p>In the vast expanse of creation, where reality folds upon itself like pages in an ancient tome, there exists a world poised upon the back of a cosmic entity. This is Melneri, a realm where magic flows like water, where the mundane and the extraordinary dance together in endless waltz.</p>
+<p class="first-paragraph">In the vast expanse of creation, where reality folds upon itself like pages in an ancient tome, there exists a world poised upon the back of a cosmic entity. This is Melneri, a realm where magic flows like water, where the mundane and the extraordinary dance together in endless waltz.</p>
 
-  <p>The lands of Melneri stretch from the frost-bitten Northlands to the sun-scorched Dunes of Eternal Thirst. Between lie forests that whisper secrets of old, mountains that scrape the very heavens, and oceans that hide civilizations in their deepest trenches.</p>
+<p>The lands of Melneri stretch from the frost-bitten Northlands to the sun-scorched Dunes of Eternal Thirst. Between lie forests that whisper secrets of old, mountains that scrape the very heavens, and oceans that hide civilizations in their deepest trenches.</p>
 
-  <p>Here, the peoples of a hundred nations forge their destinies amidst gods and monsters alike. Some seek power, others knowledge, and many simply strive to live another day in a world where wonder and terror often wear the same face.</p>
+<p>Here, the peoples of a hundred nations forge their destinies amidst gods and monsters alike. Some seek power, others knowledge, and many simply strive to live another day in a world where wonder and terror often wear the same face.</p>
+
+<div class="section-divider"></div>
+
+<div class="updates-section">
+  <h2 class="updates-title">Recent Updates</h2>
+  <ul class="updates-list">
+    <li>The Chronicles of the Shattered Isles have been expanded</li>
+    <li>New character profiles added to the People section</li>
+    <li>Additional magical systems documented in the Systems section</li>
+  </ul>
 </div>
 
-<div class="fantasy-separator"></div>
-
-## Recent Updates
-
-* The Chronicles of the Shattered Isles have been expanded
-* New character profiles added to the People section
-* Additional magical systems documented in the Systems section
-
-<div class="character-box">
-  <h3>Featured Character: Lyari Windwhisper</h3>
-  <p><strong>Race:</strong> Sylvan Elf<br>
-  <strong>Occupation:</strong> Storm Mage<br>
-  <strong>Location:</strong> Cloudspire Tower<br>
-  <strong>Affiliation:</strong> The Harmonic Order</p>
+<div class="feature-box">
+  <h3 class="feature-title">Featured Character: Lyari Windwhisper</h3>
+  <div class="feature-details">
+    <div class="feature-item">
+      <div class="feature-label">Race:</div>
+      <div>Sylvan Elf</div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-label">Occupation:</div>
+      <div>Storm Mage</div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-label">Location:</div>
+      <div>Cloudspire Tower</div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-label">Affiliation:</div>
+      <div>The Harmonic Order</div>
+    </div>
+  </div>
   
-  <blockquote>"Music doesn't create the storm. It simply reveals the storm that was always there, waiting."</blockquote>
+  <div class="feature-quote">
+    "Music doesn't create the storm. It simply reveals the storm that was always there, waiting."
+  </div>
   
-  <p><a href="{{ site.baseurl }}/people/lyari-windwhisper/">Read full character profile</a></p>
+  <div class="feature-link">
+    <a href="{{ site.baseurl }}/people/lyari-windwhisper/">Read full character profile</a>
+  </div>
 </div>
 
-<div class="parchment-note">
+<div class="note-box">
   The archives of Melneri continue to grow. Return often to discover newly unearthed texts and chronicles.
 </div>
 
-<div class="forum-thread">
-  <div class="thread-header">
+<div class="discussion-box">
+  <div class="discussion-header">
     Latest Discussion: The Origins of Magic
   </div>
-  <div class="thread-content">
+  <div class="discussion-content">
     <p>Scholars debate whether magic originates from the cosmos itself or from the will of ancient beings that predate our understanding of time.</p>
   </div>
-  <div class="thread-footer">
+  <div class="discussion-footer">
     Started by Arch-Mage Thorne • 7 replies
   </div>
 </div>
