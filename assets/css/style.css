@@ -372,37 +372,6 @@ footer {
   }
 }
 
-/* Discussion Box */
-.discussion-box {
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  margin: 25px 0;
-  overflow: hidden;
-  
-  .discussion-header {
-    padding: 10px 15px;
-    background: linear-gradient(to bottom, var(--wood-light), var(--wood-medium));
-    color: var(--parchment-light);
-    font-family: 'Cinzel', serif;
-    font-size: 1.1em;
-    border-bottom: 1px solid var(--wood-dark);
-  }
-  
-  .discussion-content {
-    padding: 15px;
-    background: var(--panel-color);
-  }
-  
-  .discussion-footer {
-    padding: 10px 15px;
-    background: var(--parchment);
-    border-top: 1px solid var(--border-color);
-    font-size: 0.9em;
-    text-align: right;
-    font-style: italic;
-  }
-}
-
 /* Special note box */
 .note-box {
   padding: 15px 20px;
@@ -415,4 +384,184 @@ footer {
   color: var(--ink-dark);
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   border-radius: 0 8px 8px 0;
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+thead {
+  background-color: var(--wood-medium);
+  color: var(--parchment-light);
+  text-align: left;
+  font-family: 'Cinzel', serif;
+}
+
+th, td {
+  padding: 12px 15px;
+}
+
+tr {
+  border-bottom: 1px solid var(--border-color);
+}
+
+tbody tr {
+  background-color: var(--parchment);
+}
+
+tbody tr:nth-of-type(even) {
+  background-color: var(--parchment-light);
+}
+
+/* Wiki links section */
+.wiki-links {
+  background: var(--panel-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 15px 20px;
+  margin: 25px 0;
+}
+
+.wiki-links-title {
+  font-family: 'Cinzel', serif;
+  color: var(--heading-color);
+  margin-top: 0;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+}
+
+.wiki-links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.wiki-link-item {
+  padding: 8px;
+  transition: all 0.2s ease;
+  border-radius: 4px;
+  
+  &:hover {
+    background: rgba(255,255,255,0.5);
+  }
+  
+  a {
+    display: block;
+    position: relative;
+    padding-left: 20px;
+    
+    &::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--heading-color);
+    }
+  }
+}
+
+/* Info box for important details */
+.info-box {
+  background: linear-gradient(to bottom right, var(--parchment), var(--parchment-light));
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 15px 20px;
+  margin: 25px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.info-box-title {
+  font-family: 'Cinzel', serif;
+  color: var(--heading-color);
+  margin-top: 0;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+@media (max-width: 600px) {
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.info-item {
+  display: flex;
+  margin-bottom: 8px;
+  
+  .info-label {
+    font-weight: bold;
+    min-width: 120px;
+  }
+}
+
+/* Code blocks styling */
+pre.highlight, code {
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+}
+
+pre.highlight {
+  padding: 15px;
+  overflow-x: auto;
+}
+
+code {
+  padding: 2px 5px;
+  font-size: 0.9em;
+}
+
+/* Image styling */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.image-caption {
+  text-align: center;
+  font-style: italic;
+  color: var(--ink-dark);
+  font-size: 0.9em;
+  margin-top: 5px;
+}
+
+/* Quotes styling */
+blockquote {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  color: var(--ink-dark);
+  background-color: rgba(182, 159, 113, 0.1);
+  border-left: 4px solid var(--border-color);
+  padding: 15px 20px;
+  margin: 20px 0;
+  border-radius: 0 8px 8px 0;
+}
+
+/* Category badges */
+.category-badge {
+  display: inline-block;
+  background-color: var(--wood-medium);
+  color: var(--parchment-light);
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.8em;
+  font-family: 'Cinzel', serif;
+  margin-right: 5px;
+  margin-bottom: 5px;
 }

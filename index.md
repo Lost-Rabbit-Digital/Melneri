@@ -115,15 +115,3 @@ Welcome to the documentation for the Melneri world, a comprehensive reference fo
 <div class="note-box">
   The archives of Melneri continue to grow. Return often to discover newly unearthed texts and chronicles.
 </div>
-
-<div class="discussion-box">
-  <div class="discussion-header">
-    Latest Discussion: The Origins of Magic
-  </div>
-  <div class="discussion-content">
-    <p>Scholars debate whether magic originates from the cosmos itself or from the will of ancient beings that predate our understanding of time.</p>
-  </div>
-  <div class="discussion-footer">
-    Started by Arch-Mage Thorne • 7 replies
-  </div>
-</div>
