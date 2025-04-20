@@ -1,94 +1,94 @@
 # Site settings
 title: World of Melneri
-description: A comprehensive reference for the world of Melneri
-baseurl: "/melneri-world" # Change this to your repository name
-url: "https://yourusername.github.io" # Change this to your GitHub username
+description: A comprehensive reference for the mystical world of Melneri
+baseurl: "/Melneri" # the subpath of your site
+url: "https://lost-rabbit-digital.github.io" # Replace with your GitHub username
 
 # Build settings
 markdown: kramdown
-remote_theme: just-the-docs/just-the-docs
+theme: minima
+plugins:
+  - jekyll-feed
 
-# Just the Docs settings
-color_scheme: dark # Options: light (default), dark
-search_enabled: true
-heading_anchors: true
-permalink: pretty
-aux_links:
-  "Melneri World on GitHub":
-    - "//github.com/yourusername/melneri-world" # Change to your repository URL
+# Theme settings
+header_pages:
+  - atlas.md
+  - chronicles.md
+  - cultures.md
+  - factions.md
+  - people.md
+  - bestiary.md
+  - systems.md
 
-# Back to top link
-back_to_top: true
-back_to_top_text: "Back to top"
-
-# Footer content
-footer_content: "Copyright &copy; 2025 Your Name. All content related to the Melneri world is your own creative property."
-
-# Collections (your world categories)
+# Collections for world categories
 collections:
   atlas:
     output: true
-    permalink: /:collection/:path/
+    permalink: /atlas/:path/
   chronicles:
     output: true
-    permalink: /:collection/:path/
+    permalink: /chronicles/:path/
   cultures:
     output: true
-    permalink: /:collection/:path/
+    permalink: /cultures/:path/
   factions:
     output: true
-    permalink: /:collection/:path/
+    permalink: /factions/:path/
   people:
     output: true
-    permalink: /:collection/:path/
+    permalink: /people/:path/
   bestiary:
     output: true
-    permalink: /:collection/:path/
+    permalink: /bestiary/:path/
   systems:
     output: true
-    permalink: /:collection/:path/
+    permalink: /systems/:path/
 
 # Default layouts
 defaults:
   - scope:
       path: ""
-      type: atlas
     values:
       layout: default
-      parent: Atlas
+  - scope:
+      path: ""
+      type: atlas
+    values:
+      layout: page
+      category: Atlas
   - scope:
       path: ""
       type: chronicles
     values:
-      layout: default
-      parent: Chronicles
+      layout: page
+      category: Chronicles
   - scope:
       path: ""
       type: cultures
     values:
-      layout: default
-      parent: Cultures
+      layout: page
+      category: Cultures
   - scope:
       path: ""
       type: factions
     values:
-      layout: default
-      parent: Factions
+      layout: page
+      category: Factions
   - scope:
       path: ""
       type: people
     values:
-      layout: default
-      parent: People
+      layout: page
+      category: People
   - scope:
       path: ""
       type: bestiary
     values:
-      layout: default
-      parent: Bestiary
+      layout: page
+      category: Bestiary
   - scope:
       path: ""
       type: systems
     values:
-      layout: default
-      parent: Systems
+      layout: page
+      category: Systems
