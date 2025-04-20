@@ -5,20 +5,19 @@
 
 /* Color Variables */
 :root {
-  --parchment-light: #f5efd6;
-  --parchment: #e9debd;
-  --parchment-dark: #d5c7a3;
-  --wood-dark: #5a3f23;
-  --wood-medium: #8e6537;
-  --wood-light: #bd9862;
-  --ink-color: #33302a;
-  --ink-dark: #222;
-  --heading-color: #8f2626;
+  --parchment-light: #f9f7ef;
+  --parchment: #f0ead6;
+  --parchment-dark: #e2d9bc;
+  --wood-medium: #9c7a50;
+  --wood-light: #c4a980;
+  --ink-color: #333333;
+  --ink-dark: #222222;
+  --heading-color: #39689c;
   --link-color: #2f5d8c;
-  --link-hover: #8f2626;
-  --border-color: #b69f71;
-  --shadow-color: rgba(70, 45, 20, 0.3);
-  --panel-color: #f0e6cc;
+  --link-hover: #4f81b1;
+  --border-color: #c4b78f;
+  --shadow-color: rgba(70, 45, 20, 0.1);
+  --panel-color: #f6f2e3;
   --gold: #c7a44e;
 }
 
@@ -28,7 +27,7 @@ body {
   color: var(--ink-color);
   line-height: 1.8;
   font-size: 16px;
-  background: linear-gradient(135deg, var(--wood-medium), var(--wood-dark));
+  background: linear-gradient(135deg, #bead9a, #a88f6f);
   background-attachment: fixed;
 }
 
@@ -352,9 +351,8 @@ header {
 footer {
   text-align: center;
   padding: 20px;
-  color: var(--parchment-light);
+  color: #f0ead6;
   font-size: 0.9em;
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
 }
 
 /* Responsive Tweaks */
@@ -384,40 +382,6 @@ footer {
   color: var(--ink-dark);
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   border-radius: 0 8px 8px 0;
-}
-
-/* Table styling */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 25px 0;
-  font-size: 0.9em;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-thead {
-  background-color: var(--wood-medium);
-  color: var(--parchment-light);
-  text-align: left;
-  font-family: 'Cinzel', serif;
-}
-
-th, td {
-  padding: 12px 15px;
-}
-
-tr {
-  border-bottom: 1px solid var(--border-color);
-}
-
-tbody tr {
-  background-color: var(--parchment);
-}
-
-tbody tr:nth-of-type(even) {
-  background-color: var(--parchment-light);
 }
 
 /* Wiki links section */
@@ -508,49 +472,38 @@ tbody tr:nth-of-type(even) {
   }
 }
 
-/* Code blocks styling */
-pre.highlight, code {
-  background-color: rgba(255, 255, 255, 0.5);
-  border: 1px solid var(--border-color);
-  border-radius: 5px;
-}
-
-pre.highlight {
-  padding: 15px;
-  overflow-x: auto;
-}
-
-code {
-  padding: 2px 5px;
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 25px 0;
   font-size: 0.9em;
-}
-
-/* Image styling */
-img {
-  max-width: 100%;
-  height: auto;
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-.image-caption {
-  text-align: center;
-  font-style: italic;
-  color: var(--ink-dark);
-  font-size: 0.9em;
-  margin-top: 5px;
+thead {
+  background-color: var(--wood-medium);
+  color: var(--parchment-light);
+  text-align: left;
+  font-family: 'Cinzel', serif;
 }
 
-/* Quotes styling */
-blockquote {
-  font-family: 'IM Fell English', serif;
-  font-style: italic;
-  color: var(--ink-dark);
-  background-color: rgba(182, 159, 113, 0.1);
-  border-left: 4px solid var(--border-color);
-  padding: 15px 20px;
-  margin: 20px 0;
-  border-radius: 0 8px 8px 0;
+th, td {
+  padding: 12px 15px;
+}
+
+tr {
+  border-bottom: 1px solid var(--border-color);
+}
+
+tbody tr {
+  background-color: var(--parchment);
+}
+
+tbody tr:nth-of-type(even) {
+  background-color: var(--parchment-light);
 }
 
 /* Category badges */
