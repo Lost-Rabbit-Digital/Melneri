@@ -1,94 +1,17 @@
-# Site settings
 title: World of Melneri
 description: A comprehensive reference for the mystical world of Melneri
-baseurl: "/Melneri" # the subpath of your site
-url: "https://lost-rabbit-digital.github.io" # Replace with your GitHub username
+baseurl: "/Melneri"
+url: "https://lost-rabbit-digital.github.io/Melneri/"
 
 # Build settings
 markdown: kramdown
-theme: minima
+remote_theme: pages-themes/minimal@v0.2.0
 plugins:
-  - jekyll-feed
+  - jekyll-remote-theme
 
-# Theme settings
-header_pages:
-  - atlas.md
-  - chronicles.md
-  - cultures.md
-  - factions.md
-  - people.md
-  - bestiary.md
-  - systems.md
+# Show downloads
+show_downloads: false
 
-# Collections for world categories
-collections:
-  atlas:
-    output: true
-    permalink: /atlas/:path/
-  chronicles:
-    output: true
-    permalink: /chronicles/:path/
-  cultures:
-    output: true
-    permalink: /cultures/:path/
-  factions:
-    output: true
-    permalink: /factions/:path/
-  people:
-    output: true
-    permalink: /people/:path/
-  bestiary:
-    output: true
-    permalink: /bestiary/:path/
-  systems:
-    output: true
-    permalink: /systems/:path/
-
-# Default layouts
-defaults:
-  - scope:
-      path: ""
-    values:
-      layout: default
-  - scope:
-      path: ""
-      type: atlas
-    values:
-      layout: page
-      category: Atlas
-  - scope:
-      path: ""
-      type: chronicles
-    values:
-      layout: page
-      category: Chronicles
-  - scope:
-      path: ""
-      type: cultures
-    values:
-      layout: page
-      category: Cultures
-  - scope:
-      path: ""
-      type: factions
-    values:
-      layout: page
-      category: Factions
-  - scope:
-      path: ""
-      type: people
-    values:
-      layout: page
-      category: People
-  - scope:
-      path: ""
-      type: bestiary
-    values:
-      layout: page
-      category: Bestiary
-  - scope:
-      path: ""
-      type: systems
-    values:
-      layout: page
-      category: Systems
+# Theme overrides
+github:
+  is_project_page: false

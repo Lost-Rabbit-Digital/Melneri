@@ -1,7 +1,7 @@
 @import "{{ site.theme }}";
 
 /* Google Font Imports */
-@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=Eagle+Lake&family=IM+Fell+English+SC&family=Bilbo+Swash+Caps&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=Eagle+Lake&family=IM+Fell+English+SC&family=IM+Fell+English&display=swap');
 
 /* Color Variables */
 :root {
@@ -33,17 +33,14 @@ body {
   line-height: 1.7;
 }
 
-/* Main Content Area with Parchment Background */
-.page-content {
-  position: relative;
-  background-color: var(--parchment);
-  margin: 30px auto;
-  padding: 25px;
+/* Override the minimal theme's container */
+.wrapper {
   max-width: 900px;
-  border-radius: 8px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-  
+}
+
+.markdown-body {
   /* Parchment texture created with gradients */
+  background-color: var(--parchment);
   background-image: 
     /* Random speckles for texture */
     radial-gradient(var(--parchment-dark) 1px, transparent 2px),
@@ -61,34 +58,13 @@ body {
     10px 10px,
     0 0,
     0 0;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
-/* Fancy Border Effect */
-.page-content::before {
-  content: "";
-  position: absolute;
-  top: -10px;
-  left: -10px;
-  right: -10px;
-  bottom: -10px;
-  z-index: -1;
-  border-radius: 12px;
-  background: 
-    /* Decorative border created with gradient */
-    repeating-linear-gradient(
-      45deg,
-      var(--border-color),
-      var(--border-color) 10px,
-      var(--parchment-darker) 10px,
-      var(--parchment-darker) 20px
-    );
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-}
-
-/* Site Header Styling */
-.site-header {
-  border-top: none;
-  border-bottom: 2px solid var(--border-color);
+/* Header Styling */
+header {
   background: 
     /* Subtle vertical wood grain */
     linear-gradient(to right, 
@@ -102,29 +78,18 @@ body {
     );
   background-size: 4px 100%, 100% 100%;
   box-shadow: 0 3px 10px var(--shadow-color);
-  margin-bottom: 0;
+  border-bottom: 2px solid var(--border-color);
+  border-radius: 8px 8px 0 0;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px 0;
 }
 
-.site-title {
+header h1 {
   font-family: 'MedievalSharp', cursive;
-  font-size: 2.8em;
-  letter-spacing: 1px;
-  color: var(--heading-color) !important;
+  color: var(--heading-color);
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-}
-
-.site-nav {
-  font-family: 'Eagle Lake', cursive;
-  font-size: 1.2em;
-  
-  .page-link {
-    color: var(--link-color);
-    
-    &:hover {
-      color: var(--link-hover);
-      text-decoration: none;
-    }
-  }
 }
 
 /* Typography */
@@ -137,9 +102,8 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 2.5em;
-  margin-bottom: 0.8em;
-  text-align: center;
   letter-spacing: 1px;
+  text-align: center;
   
   /* Celtic-inspired decorative underline */
   &::after {
@@ -195,7 +159,7 @@ ul {
 }
 
 /* Drop Cap for Paragraphs */
-.post-content p:first-of-type::first-letter {
+#about-melneri p:first-of-type::first-letter {
   font-family: 'IM Fell English SC', serif;
   float: left;
   font-size: 3.2em;
@@ -231,161 +195,7 @@ ul {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-.navigation-list {
-  column-count: 2;
-  column-gap: 30px;
-  
-  @media screen and (max-width: 600px) {
-    column-count: 1;
-  }
-  
-  a {
-    display: block;
-    padding: 8px 10px;
-    margin-bottom: 5px;
-    border-bottom: 1px dotted var(--border-color);
-    transition: all 0.2s ease;
-    
-    &:hover {
-      background-color: rgba(255, 255, 255, 0.5);
-      border-bottom-style: solid;
-      transform: translateX(5px);
-    }
-    
-    &::before {
-      content: "⚜";
-      display: inline-block;
-      margin-right: 8px;
-      color: var(--border-color);
-      font-size: 0.8em;
-    }
-  }
-}
-
-/* Table Styling */
-table {
-  border-collapse: collapse;
-  width: 100%;
-  margin-bottom: 20px;
-  border: 2px solid var(--border-color);
-  
-  th {
-    font-family: 'Eagle Lake', cursive;
-    background: linear-gradient(to bottom, var(--parchment-darker), var(--parchment-dark));
-    padding: 10px;
-    border: 1px solid var(--border-color);
-    text-align: center;
-  }
-  
-  td {
-    padding: 10px;
-    border: 1px solid var(--border-color);
-    background-color: rgba(255, 255, 255, 0.2);
-  }
-  
-  tr:nth-child(even) td {
-    background-color: rgba(255, 255, 255, 0.3);
-  }
-}
-
-/* Blockquote Styling */
-blockquote {
-  font-family: 'Bilbo Swash Caps', cursive;
-  font-size: 1.3em;
-  color: var(--ink-color);
-  border-left: 4px solid var(--border-color);
-  padding: 10px 20px;
-  margin: 20px 0;
-  background: 
-    linear-gradient(to right, var(--parchment-dark), var(--parchment) 4px),
-    var(--parchment-light);
-  border-radius: 0 8px 8px 0;
-  
-  p {
-    font-style: italic;
-  }
-  
-  cite {
-    display: block;
-    text-align: right;
-    font-size: 0.8em;
-    margin-top: 10px;
-  }
-}
-
-/* Footer */
-.site-footer {
-  border-top: 2px solid var(--border-color);
-  background: linear-gradient(to bottom, var(--parchment), var(--parchment-dark));
-  padding: 20px 0;
-  
-  h2 {
-    font-size: 1.5em;
-  }
-}
-
-/* Media Queries */
-@media screen and (max-width: 800px) {
-  .page-content {
-    padding: 15px;
-    margin: 15px;
-  }
-  
-  .site-title {
-    font-size: 2.2em;
-  }
-  
-  h1 {
-    font-size: 2em;
-  }
-  
-  h2 {
-    font-size: 1.5em;
-  }
-}
-
-/* Special Elements */
-.fantasy-separator {
-  text-align: center;
-  margin: 30px 0;
-  height: 20px;
-  background: 
-    /* Celtic knot pattern approximated with gradients */
-    radial-gradient(circle at center, var(--border-color) 5px, transparent 6px),
-    radial-gradient(circle at center, transparent 8px, var(--border-color) 9px, var(--border-color) 10px, transparent 11px);
-  background-size: 40px 20px, 40px 20px;
-  background-position: center;
-  background-repeat: no-repeat;
-  
-  &::before, &::after {
-    content: "";
-    display: inline-block;
-    height: 2px;
-    width: 35%;
-    background: linear-gradient(to right, transparent, var(--border-color), transparent);
-    vertical-align: middle;
-    margin: 0 10px;
-  }
-}
-
-.parchment-note {
-  background: 
-    /* Fine stipple pattern */
-    radial-gradient(var(--parchment-darker) 1px, transparent 1px),
-    /* Gradient base */
-    linear-gradient(to bottom right, var(--parchment-dark), var(--parchment), var(--parchment-dark));
-  background-size: 8px 8px, 100% 100%;
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  padding: 15px;
-  margin: 20px 0;
-  font-family: 'Bilbo Swash Caps', cursive;
-  font-size: 1.3em;
-  position: relative;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), inset 0 0 10px rgba(0, 0, 0, 0.05);
-}
-
-/* Character Info Box */
+/* Character box styling */
 .character-box {
   border: 2px solid var(--border-color);
   border-radius: 8px;
@@ -400,128 +210,9 @@ blockquote {
     /* Base color */
     var(--parchment-light);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  
-  .character-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-    
-    .character-avatar {
-      width: 70px;
-      height: 70px;
-      margin-right: 15px;
-      border-radius: 50%;
-      background: 
-        /* Creating a decorative profile silhouette with gradients */
-        radial-gradient(circle at 40% 40%, var(--parchment-darker) 10px, transparent 11px),
-        radial-gradient(ellipse at 50% 60%, var(--parchment-darker) 15px 20px, transparent 21px),
-        var(--ink-light);
-      border: 2px solid var(--border-color);
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    }
-    
-    .character-title {
-      margin: 0;
-      font-family: 'MedievalSharp', cursive;
-      color: var(--heading-color);
-    }
-  }
-  
-  .character-details {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    
-    @media screen and (max-width: 600px) {
-      grid-template-columns: 1fr;
-    }
-    
-    .detail-item {
-      display: flex;
-      
-      .detail-label {
-        font-weight: bold;
-        min-width: 120px;
-      }
-    }
-  }
 }
 
-/* Decorative capital letters for sections */
-.decorative-letter {
-  float: left;
-  font-family: 'IM Fell English SC', serif;
-  font-size: 4em;
-  line-height: 1;
-  padding: 5px 10px 0 0;
-  color: var(--heading-color);
-}
-
-/* Old forum style button links */
-.forum-button {
-  display: inline-block;
-  padding: 5px 15px;
-  margin: 5px;
-  font-family: 'Eagle Lake', cursive;
-  color: var(--parchment-light);
-  background: linear-gradient(to bottom, var(--wood-light), var(--wood-medium));
-  border: 1px solid var(--wood-dark);
-  border-radius: 5px;
-  text-decoration: none;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 2px 4px rgba(0, 0, 0, 0.2);
-  
-  &:hover {
-    background: linear-gradient(to bottom, var(--wood-medium), var(--wood-dark));
-    color: var(--parchment-light);
-    text-decoration: none;
-  }
-  
-  &:active {
-    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.4);
-    transform: translateY(1px);
-  }
-}
-
-/* Scrolled paper for important notices */
-.scroll-box {
-  position: relative;
-  margin: 30px 20px;
-  padding: 20px 30px;
-  background: var(--parchment-light);
-  border-top: 2px solid var(--border-color);
-  border-bottom: 2px solid var(--border-color);
-  
-  /* Scroll ends effect using gradients */
-  &::before, &::after {
-    content: "";
-    position: absolute;
-    width: 20px;
-    top: -2px;
-    bottom: -2px;
-    background: 
-      /* Scroll cylinder */
-      repeating-linear-gradient(
-        to bottom,
-        var(--parchment-darker),
-        var(--parchment-darker) 2px,
-        var(--parchment-dark) 2px,
-        var(--parchment-dark) 4px
-      );
-    border-radius: 10px;
-    border: 2px solid var(--border-color);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  }
-  
-  &::before {
-    left: -15px;
-  }
-  
-  &::after {
-    right: -15px;
-  }
-}
-
-/* Old forum thread style container */
+/* Forum style thread box */
 .forum-thread {
   border: 1px solid var(--border-color);
   border-radius: 5px;
@@ -551,92 +242,69 @@ blockquote {
   }
 }
 
-/* Tooltip style old-school */
-[data-tooltip] {
+/* Parchment note box */
+.parchment-note {
+  background: 
+    /* Fine stipple pattern */
+    radial-gradient(var(--parchment-darker) 1px, transparent 1px),
+    /* Gradient base */
+    linear-gradient(to bottom right, var(--parchment-dark), var(--parchment), var(--parchment-dark));
+  background-size: 8px 8px, 100% 100%;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 15px;
+  margin: 20px 0;
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
   position: relative;
-  cursor: help;
-  border-bottom: 1px dotted var(--link-color);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), inset 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Blockquote styling */
+blockquote {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  color: var(--ink-color);
+  border-left: 4px solid var(--border-color);
+  padding: 10px 20px;
+  margin: 20px 0;
+  background: 
+    linear-gradient(to right, var(--parchment-dark), var(--parchment) 4px),
+    var(--parchment-light);
+  border-radius: 0 8px 8px 0;
+}
+
+/* Fantasy separator */
+.fantasy-separator {
+  text-align: center;
+  margin: 30px 0;
+  height: 20px;
+  background: 
+    /* Celtic knot pattern approximated with gradients */
+    radial-gradient(circle at center, var(--border-color) 5px, transparent 6px),
+    radial-gradient(circle at center, transparent 8px, var(--border-color) 9px, var(--border-color) 10px, transparent 11px);
+  background-size: 40px 20px, 40px 20px;
+  background-position: center;
+  background-repeat: no-repeat;
   
-  &::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    bottom: 125%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 200px;
-    padding: 5px 10px;
-    background: var(--parchment-dark);
-    color: var(--ink-color);
-    font-family: 'IM Fell English', serif;
-    font-size: 0.9em;
-    border: 1px solid var(--border-color);
-    border-radius: 5px;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s;
-    z-index: 100;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  }
-  
-  &:hover::after {
-    opacity: 1;
+  &::before, &::after {
+    content: "";
+    display: inline-block;
+    height: 2px;
+    width: 35%;
+    background: linear-gradient(to right, transparent, var(--border-color), transparent);
+    vertical-align: middle;
+    margin: 0 10px;
   }
 }
 
-/* Ornamental frame for special content */
-.ornamental-frame {
-  position: relative;
-  margin: 40px 0;
+/* Footer styling */
+footer {
+  background: linear-gradient(to bottom, var(--parchment), var(--parchment-dark));
+  border-top: 2px solid var(--border-color);
+  margin-top: 0;
   padding: 20px;
-  border-radius: 5px;
-  
-  /* Background with subtle texture */
-  background: 
-    radial-gradient(var(--parchment-dark) 1px, transparent 1px),
-    var(--parchment-light);
-  background-size: 10px 10px;
-  
-  /* Border created with pure CSS */
-  &::before {
-    content: "";
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    right: -10px;
-    bottom: -10px;
-    z-index: -1;
-    border: 2px solid var(--border-color);
-    border-radius: 10px;
-    
-    /* Corner decorations */
-    background:
-      /* Top-left corner */
-      radial-gradient(circle at 15px 15px, var(--border-color) 5px, transparent 6px),
-      /* Top-right corner */
-      radial-gradient(circle at calc(100% - 15px) 15px, var(--border-color) 5px, transparent 6px),
-      /* Bottom-left corner */
-      radial-gradient(circle at 15px calc(100% - 15px), var(--border-color) 5px, transparent 6px),
-      /* Bottom-right corner */
-      radial-gradient(circle at calc(100% - 15px) calc(100% - 15px), var(--border-color) 5px, transparent 6px),
-      transparent;
-    
-    /* Edge decorations */
-    box-shadow:
-      /* Top edge */
-      0 0 0 2px var(--parchment),
-      0 10px 0 -5px var(--parchment),
-      0 10px 0 -3px var(--border-color),
-      /* Right edge */
-      0 0 0 2px var(--parchment),
-      -10px 0 0 -5px var(--parchment),
-      -10px 0 0 -3px var(--border-color),
-      /* Bottom edge */
-      0 0 0 2px var(--parchment),
-      0 -10px 0 -5px var(--parchment),
-      0 -10px 0 -3px var(--border-color),
-      /* Left edge */
-      0 0 0 2px var(--parchment),
-      10px 0 0 -5px var(--parchment),
-      10px 0 0 -3px var(--border-color);
-  }
+  border-radius: 0 0 8px 8px;
+  max-width: 960px;
+  margin: 0 auto;
 }
